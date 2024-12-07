@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: default
+          uri: http://localhost:9080
+          predicates:
+            - Path=/A*
+#          filters:
+#            - StripPrefix=1
+logging:
+  level:
+    root: debug
